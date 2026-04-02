@@ -1,0 +1,136 @@
+.reviews-section {
+  background-color: var(--bg-color);
+  padding: 5rem 0; /* Removing horizontal padding for full-bleed marquee */
+  overflow: hidden;
+}
+
+.reviews-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 0 5%;
+}
+
+.rating-summary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.rating-score {
+  font-size: 4.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  text-shadow: 0 0 20px rgba(252, 163, 17, 0.4);
+}
+
+.stars {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  letter-spacing: 5px;
+  filter: drop-shadow(0 0 5px rgba(252, 163, 17, 0.8));
+}
+
+.rating-count {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+/* Infinite Marquee Animation */
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  padding: 1rem 0;
+}
+
+.marquee-content {
+  display: flex;
+  gap: 2rem;
+  width: max-content;
+  animation: scrollMarquee 25s linear infinite;
+}
+
+.marquee-content:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scrollMarquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-50% - 1rem)); } 
+  /* -50% shifts halfway exactly matching the duplicate array length */
+}
+
+/* Card Styling Update */
+.review-card {
+  width: 350px;
+  min-width: 350px;
+  padding: 2rem;
+  border-radius: 15px;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.review-card:hover {
+  transform: scale(1.05) translateY(-10px);
+  z-index: 10;
+  border-color: rgba(252, 163, 17, 0.5);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.6), 0 0 20px rgba(252, 163, 17, 0.2);
+}
+
+.review-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.reviewer-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.reviewer-avatar {
+  width: 45px;
+  height: 45px;
+  background: var(--primary-gradient);
+  color: var(--bg-color);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 800;
+  font-size: 1.2rem;
+}
+
+.reviewer-name {
+  color: var(--text-main);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.review-date {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.review-stars {
+  color: var(--primary-color);
+  font-size: 0.9rem;
+}
+
+.review-text {
+  color: var(--text-main);
+  font-style: italic;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .review-card {
+    width: 300px;
+    min-width: 300px;
+  }
+}

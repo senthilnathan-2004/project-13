@@ -1,0 +1,141 @@
+.footer-section {
+  padding: 4rem 5% 1rem;
+  position: relative;
+  z-index: 2;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 20px;
+  padding: 3rem;
+  margin-bottom: 2rem;
+  background: linear-gradient(135deg, rgba(38,22,13,0.7) 0%, rgba(13,6,3,0.9) 100%);
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.footer-info {
+  flex: 1;
+  min-width: 300px;
+}
+
+.footer-logo {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+.footer-desc {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  max-width: 350px;
+  margin-bottom: 2rem;
+}
+
+.footer-location {
+  flex: 1;
+  min-width: 300px;
+}
+
+.footer-location h3, .footer-hours h3 {
+  color: var(--text-main);
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.footer-location p, .footer-hours p {
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.directions-link {
+  display: inline-block;
+  margin: 1rem 0;
+  color: var(--primary-color);
+  font-weight: 600;
+  transition: transform 0.3s;
+  padding: 0.5rem 1rem;
+  background: rgba(252, 163, 17, 0.1);
+  border-radius: 8px;
+  border: 1px solid rgba(252, 163, 17, 0.2);
+}
+
+.directions-link:hover {
+  transform: translateX(5px);
+  background: rgba(252, 163, 17, 0.2);
+}
+
+.highlight-hours {
+  font-weight: 700;
+  font-size: 1.1rem !important;
+}
+
+.services {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.services span {
+  color: var(--text-muted);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Map Iframe Styling */
+.map-container {
+  margin-top: 1.5rem;
+  width: 100%;
+  height: 250px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: var(--glass-border);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  position: relative;
+}
+
+.map-container::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border: 1px solid rgba(252, 163, 17, 0.2);
+  border-radius: 12px;
+  pointer-events: none;
+}
+
+.google-map-iframe {
+  width: 100%;
+  height: 100%;
+  filter: invert(90%) hue-rotate(180deg) brightness(80%) contrast(120%);
+  transition: filter 0.3s ease;
+}
+
+.google-map-iframe:hover {
+  filter: invert(90%) hue-rotate(180deg) brightness(95%) contrast(110%);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 1rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    padding: 2rem;
+  }
+}

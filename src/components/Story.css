@@ -1,0 +1,117 @@
+.story-section {
+  padding: 5rem 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1200px; /* Essential for 3D */
+}
+
+.story-container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  border-radius: 20px;
+  overflow: visible;
+  padding: 3rem;
+  gap: 3rem;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.6), inset 0 0 30px rgba(252, 163, 17, 0.05);
+  border: 1px solid rgba(252, 163, 17, 0.2);
+  align-items: center;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.story-content {
+  flex: 1.5;
+  transform: translateZ(50px); /* 3D pop out effect on content */
+}
+
+.story-subtitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.story-text {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--text-main);
+  margin-bottom: 2rem;
+}
+
+.story-features {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  transform: translateZ(30px);
+}
+
+.feature-pill {
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  font-weight: 600;
+  color: var(--primary-color);
+  font-size: 0.9rem;
+  border: 1px solid rgba(252, 163, 17, 0.3);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.story-image-box {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateZ(80px); /* Pushes the image further off the card */
+}
+
+.cube-wrapper {
+  width: 250px;
+  height: 250px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(252, 163, 17, 0.3), 0 0 20px rgba(252, 163, 17, 0.2);
+  border: 3px solid var(--primary-color);
+  position: relative;
+}
+
+.cube-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, transparent 50%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.story-tea-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 900px) {
+  .story-section {
+    padding: 3rem 1rem;
+  }
+  .story-container {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 2rem 1.5rem;
+    gap: 2rem;
+  }
+  .story-content .section-title {
+    text-align: center !important;
+  }
+  .story-features {
+    justify-content: center;
+  }
+  .story-content, .story-image-box {
+    transform: none !important; /* Disabling strict Z-depth on small screens */
+  }
+  .cube-wrapper {
+    width: 200px;
+    height: 200px;
+  }
+}
