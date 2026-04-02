@@ -28,7 +28,7 @@ const Navbar = () => {
     <header className={`navbar-header ${scrolled ? 'scrolled' : ''}`}>
       <div className="navbar-container">
         <div style={{ display: "flex", justifyContent: "center", gap: "1rem", alignItems: "center" }}>
-          <img src="/public/logo.jpeg" alt="" className='navbar-logo' style={{ width: "2.5rem", height: "2.5rem", borderRadius: "50%" }} />
+          <img src="/logo.jpeg" alt="" className='navbar-logo' style={{ width: "2.5rem", height: "2.5rem", borderRadius: "50%" }} />
           <a href="#" className="navbar-logo" onClick={closeMenu}>
             Cup Culture
           </a>
